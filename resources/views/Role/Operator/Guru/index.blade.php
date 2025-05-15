@@ -254,9 +254,8 @@
                     <span class="text-white">Welcome, Operator</span>
                     <span class="text-white font-semibold">{{ $user->name }}</span>
                 </div>
-<div class="user-info">
-                    <img alt="Profile picture" class="rounded-full ml-4" height="50" src="{{ asset('images/user.png') }}" alt="Profil">
-                </div>           </div>
+                <img alt="Profile picture" class="rounded-full ml-4" height="50" src="https://storage.googleapis.com/a1aa/image/sG3g-w8cayIo0nXWyycQx8dmzPb0_0-Zc6iv6Fls36s.jpg" width="50">
+            </div>
             <div id="dropdown-menu" class="dropdown-menu">
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
@@ -286,8 +285,8 @@
                     </a>
                 </li>
                 <li class="mb-4">
-                    <a href="{{ route('Operator.Guru.index') }}" class="flex items-center text-white p-2 rounded-lg shadow hover:bg-blue-500">
-                        <i class="fas fa-chalkboard-teacher text-white mr-2"></i> Daftar Guru
+                    <a href="{{ route('Operator.Guru.index') }}" class="flex items-center text-black p-2 rounded-lg shadow hover:bg-blue-500">
+                        <i class="fas fa-chalkboard-teacher text-black mr-2"></i> Daftar Guru
                     </a>
                 </li>
                 <li class="mb-4">
@@ -303,11 +302,11 @@
  
                 <div class="flex justify-end mb-4">
                     <a href="{{ route('Operator.Guru.create') }}" class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center hover:bg-green-400">
-                        <i class="fas fa-plus mr-2"></i> Tambahkan
+                        <i class="fas fa-plus mr-2"></i> Tambahkan Guru
                     </a>
                 </div>
                 <div class="bg-white p-4 md:p-6 rounded-lg shadow-md">
-                    <h2 class="text-xl font-bold mb-4 text-blue-600">Teacher Information</h2>
+                    <h2 class="text-xl font-bold mb-4 text-blue-600">Informasi Guru</h2>
                     <div class="space-y-4">
                         @foreach ($gurus as $teacher)
                             <div class="bg-gray-100 p-4 rounded-lg flex flex-col md:flex-row justify-between items-start md:items-center">
@@ -324,14 +323,14 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="text-red-500 flex items-center hover:text-red-400">
-                                                <i class="fas fa-trash-alt mr-1"></i> DELETE
+                                                <i class="fas fa-trash-alt mr-1"></i> Delete
                                             </button>
                                         </form>
                                     </div>
                                     <div>
                                         <form action="{{ route('Operator.Guru.edit', $teacher->id_guru) }}" method="GET">
                                             <button type="submit" class="text-blue-500 flex items-center hover:text-blue-400">
-                                                <i class="fas fa-edit mr-1"></i> EDIT
+                                                <i class="fas fa-edit mr-1"></i> Edit
                                             </button>
                                         </form>
                                     </div>

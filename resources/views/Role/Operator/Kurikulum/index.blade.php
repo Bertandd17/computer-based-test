@@ -256,9 +256,7 @@
                     <span class="text-white">Welcome, Operator</span>
                     <span class="text-white font-semibold">{{ $user->name }}</span>
                 </div>
-<div class="user-info">
-                    <img alt="Profile picture" class="rounded-full ml-4" height="50" src="{{ asset('images/user.png') }}" alt="Profil">
-                </div>          
+                <img alt="Profile picture" class="rounded-full ml-4" height="50" src="https://storage.googleapis.com/a1aa/image/sG3g-w8cayIo0nXWyycQx8dmzPb0_0-Zc6iv6Fls36s.jpg" width="50">
             </div>
             <div id="dropdown-menu" class="dropdown-menu">
                 <form action="{{ route('logout') }}" method="POST">
@@ -276,8 +274,8 @@
         <div class="sidebar">
             <ul>
                 <li class="mb-4">
-                    <a href="{{ route('Operator.Kurikulum.index') }}" class="flex items-center text-white p-2 rounded-lg shadow hover:bg-blue-500">
-                        <i class="fas fa-calendar-alt text-white mr-2"></i> Kurikulum
+                    <a href="{{ route('Operator.Kurikulum.index') }}" class="flex items-center text-black p-2 rounded-lg shadow  hover:bg--500">
+                        <i class="fas fa-calendar-alt text-black mr-2"></i> Kurikulum
                     </a>
                 </li>
                 <li class="mb-4">
@@ -309,16 +307,16 @@
             <div class="flex justify-end mb-4">
                 <a href="{{ route('Operator.Kurikulum.create') }}"
                     class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center hover:bg-green-400">
-                    <i class="fas fa-plus mr-2"></i> Tambahkan
+                    <i class="fas fa-plus mr-2"></i> Tambah Kurikulum
                 </a>
             </div>
-            <h2 class="text-lg font-bold mb-4 text-blue-600">Kurikulum Information</h2>
+            <h2 class="text-lg font-bold mb-4 text-blue-600">Informasi Kurikulum</h2>
             <div class="space-y-4">
                 @foreach($kurikulums as $kurikulum)
                     <div class="bg-white p-4 rounded flex justify-between items-center shadow">
                         <span class="text-lg text-blue-600">{{ $kurikulum->nama_kurikulum }}</span>
                         <a href="{{ route('Operator.Kurikulum.edit', $kurikulum->id_kurikulum) }}" class="text-gray-500 flex items-center hover:text-gray-700">
-                            <i class="fas fa-pen mr-1"></i> EDIT
+                            <i class="fas fa-pen mr-1"></i> Edit
                         </a>
                     </div>
                 @endforeach

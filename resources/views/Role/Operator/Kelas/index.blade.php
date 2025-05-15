@@ -255,9 +255,8 @@
                     <span class="text-white">Welcome, Operator</span>
                     <span class="text-white font-semibold">{{ $user->name }}</span>
                 </div>
-<div class="user-info">
-                    <img alt="Profile picture" class="rounded-full ml-4" height="50" src="{{ asset('images/user.png') }}" alt="Profil">
-                </div>            </div>
+                <img alt="Profile picture" class="rounded-full ml-4" height="50" src="https://storage.googleapis.com/a1aa/image/sG3g-w8cayIo0nXWyycQx8dmzPb0_0-Zc6iv6Fls36s.jpg" width="50">
+            </div>
             <div id="dropdown-menu" class="dropdown-menu">
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
@@ -284,8 +283,8 @@
                     </a>
                 </li>
                 <li class="mb-4">
-                    <a href="{{ route('Operator.Kelas.index') }}" class="flex items-center text-white p-2 rounded-lg shadow hover:bg-blue-500">
-                        <i class="fas fa-home text-white mr-2"></i> Kelas
+                    <a href="{{ route('Operator.Kelas.index') }}" class="flex items-center text-black p-2 rounded-lg shadow hover:bg-blue-500">
+                        <i class="fas fa-home text-black mr-2"></i> Kelas
                     </a>
                 </li>
                 <li class="mb-4">
@@ -306,17 +305,17 @@
             <div class="flex justify-end mb-4">
                 <a href="{{ route('Operator.Kelas.create') }}"
                     class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center hover:bg-green-400">
-                    <i class="fas fa-plus mr-2"></i> Tambahkan
+                    <i class="fas fa-plus mr-2"></i> Tambahkan Kelas
                 </a>
             </div>
-            <h1 class="text-lg font-bold mb-4 text-blue-600">Class Information</h1>
+            <h1 class="text-lg font-bold mb-4 text-blue-600">Informasi Kelas</h1>
             <div class="space-y-4">
                 @foreach ($kelas as $kelases)
                     <div class="bg-white p-6 rounded-lg flex justify-between items-center shadow-lg hover:shadow-xl transition duration-300">
                         <h4 class="text-lg text-blue-600">{{ $kelases->nama_kelas }}</h4>
                         <a href="{{ route('Operator.Kelas.edit', $kelases->id_kelas) }}"
                             class="text-gray-500 flex items-center hover:text-gray-700">
-                            <i class="fas fa-pen mr-1"></i> EDIT
+                            <i class="fas fa-pen mr-1"></i> Edit
                         </a>
                     </div>
                 @endforeach
