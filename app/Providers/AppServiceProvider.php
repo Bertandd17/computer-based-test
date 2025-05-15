@@ -5,12 +5,13 @@ namespace App\Providers;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 use App\Models\User;
-use App\Models\Operator; 
-use App\Policies\OperatorPolicy; 
+use App\Models\Operator;
+use App\Policies\OperatorPolicy;
+
 class AppServiceProvider extends ServiceProvider
 {
     protected $policies = [
-        Operator::class => OperatorPolicy::class, 
+        Operator::class => OperatorPolicy::class,
     ];
 
     public function boot()
@@ -21,5 +22,9 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('delete-operator', function (User  $user) {
             return $user->hasRole('Admin');
         });
+
+        if (env('APP_ENV') !== 'local') {
+            \URL::forceScheme('https');
+        }
     }
 }
